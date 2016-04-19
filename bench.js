@@ -11,6 +11,10 @@ suite('isSameDay', function () {
 	const date4 = new Date(2010, 1, 1, 0, 0, 0, 0);
 	const date5 = new Date(2011, 0, 1, 0, 0, 0, 0);
 	const momentDate = moment(date1);
+	const twixSame = moment.twix(date1, date2);
+	const twixDay = moment.twix(date1, date3);
+	const twixMonth = moment.twix(date1, date4);
+	const twixYear = moment.twix(date1, date5);
 
 	bench('raider - same', function () {
 		raider.isSameDay(date1, date2);
@@ -27,7 +31,7 @@ suite('isSameDay', function () {
 	bench('raider - different year', function () {
 		raider.isSameDay(date1, date5);
 	});
-	
+
 	bench('moment - same', function () {
 		momentDate.isSame(date2, 'day');
 	});
@@ -45,19 +49,19 @@ suite('isSameDay', function () {
 	});
 
 	bench('twix - same', function () {
-		moment.twix(date1, date2).isSame('day');
+		twixSame.isSame('day');
 	});
 
 	bench('twix - different day', function () {
-		moment.twix(date1, date3).isSame('day');
+		twixDay.isSame('day');
 	});
 
 	bench('twix - different month', function () {
-		moment.twix(date1, date4).isSame('day');
+		twixMonth.isSame('day');
 	});
 
 	bench('twix - different year', function () {
-		moment.twix(date1, date5).isSame('day');
+		twixYear.isSame('day');
 	});
 });
 
@@ -100,7 +104,7 @@ suite('getWeekday', function () {
 	bench('moment - prepared', function () {
 		mom.day();
 	});
-	
+
 	bench('moment - unprepared', function () {
 		moment(date).day();
 	});
