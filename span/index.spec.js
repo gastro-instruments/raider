@@ -61,6 +61,6 @@ test('intersection(span)', t => {
 	const span = new Span(dates[1], dates[3]);
 
 	let result = span.intersection(new Span(dates[0], dates[2]));
-	t.is(result.from, dates[0]);
-	t.is(result.to, dates[3]);
+	t.is(Number(result.from), Number(dates[0]));
+	t.is(Number(result.to), Number(dates[3]));
 });
