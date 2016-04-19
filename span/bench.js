@@ -94,3 +94,46 @@ suite('overlaps', function () {
 		twixSpan.overlaps(twixAfter);
 	});
 });
+
+suite('intersection', function () {
+	const dateFrom = new Date(2010, 0, 2, 0, 0, 0, 0);
+	const dateTo = new Date(2010, 0, 2, 8, 0, 0, 0);
+
+	const dateA = new Date(2010, 0, 1, 0, 0, 0, 0);
+	const dateB = new Date(2010, 0, 2, 4, 0, 0, 0);
+	const dateC = new Date(2010, 0, 3, 0, 0, 0, 0);
+
+	const raiderSpan = new Span(dateFrom, dateTo);
+	const raiderIn = new Span(dateA, dateB);
+	const raiderBefore = new Span(dateA, dateFrom);
+	const raiderAfter = new Span(dateTo, dateC);
+
+	const twixSpan = moment.twix(dateFrom, dateTo);
+	const twixIn = moment.twix(dateA, dateB);
+	const twixBefore = moment.twix(dateA, dateFrom);
+	const twixAfter = moment.twix(dateTo, dateC);
+
+	bench('raider - true', function () {
+		raiderSpan.intersection(raiderIn);
+	});
+
+	bench('raider - before', function () {
+		raiderSpan.intersection(raiderBefore);
+	});
+
+	bench('raider - after', function () {
+		raiderSpan.intersection(raiderAfter);
+	});
+
+	bench('twix - true', function () {
+		twixSpan.intersection(twixIn);
+	});
+
+	bench('twix - before', function () {
+		twixSpan.intersection(twixBefore);
+	});
+
+	bench('twix - after', function () {
+		twixSpan.intersection(twixAfter);
+	});
+});
