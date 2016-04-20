@@ -15,13 +15,34 @@ module.exports = class Span {
 	}
 
 	overlaps(span) {
-		return this.to > Number(span.from) && this.from < Number(span.end);
+		return this.to > span.from && this.from < span.to;
 	}
 
 	intersection(span) {
 		return (new Span(
-			Math.min(this.from, span.from),
-			Math.max(this.to, span.to)
+			Math.max(this.from, span.from),
+			Math.min(this.to, span.to)
 		));
+	}
+
+	toArray() {
+		return [this.from, this.to];
+	}
+
+	xor(span) {
+		const dates = this.toArray().concat(span.toArray()).sort();
+		const result = [];
+		for (var i = 0; i < dates.length; i += 2) {
+			result.push(new Span(dates[i], dates[i + 1]));
+		}
+		return result;
+	}
+
+	getMinutes() {
+		return (this.to - this.from) / 60000;
+	}
+
+	length() {
+		return this.to - this.from;
 	}
 };
