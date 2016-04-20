@@ -16,7 +16,7 @@ function isSameDay(dateA, dateB) {
 }
 
 function getMinutes(dateA, dateB) {
-	return (dateB.getTime() - dateA.getTime()) / (60 * 1000);
+	return (dateB.getTime() - dateA.getTime()) / (60000);
 }
 
 function getWeekday(date) {
