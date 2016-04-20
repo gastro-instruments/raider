@@ -11,7 +11,7 @@
     "type": "git",
     "url": "ssh://git@stash.instruments.local:7999/cc/raider.git"
   },
-  "author": "Benjamin Hendrich <hendrich.benjamin@gmx.de>",
+  "author": "Benjamin Hendrich <bh@gastro-instruments.de>",
   "license": "ISC",
   "devDependencies": {
     "ava": "^0.14.0",
