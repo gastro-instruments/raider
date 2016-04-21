@@ -1,10 +1,6 @@
 # Raider
 ##### *Sometimes a new recipe just isn't better*
 
-## Table of Contents
-- [Install](#install)
-- [Usage](#usage)
-- [API](#api)
 
 ## Why
 
@@ -14,10 +10,12 @@
 
 - nuff said
 
+
 ## Install
 ```bash
 $ npm install --save raider
 ```
+
 
 ## Usage
 ```javascript
@@ -41,6 +39,7 @@ console.log(raider.getMinutes(new Date(), new Date(2016, 11, 24));
 - **span.getMinutes**()
 - **span.length**()
 
+
 ### raider.isSameDay(dateA, dateB)
 Are two dates on the same day?
 ```javascript
@@ -51,6 +50,7 @@ console.log(raider.isSameDay(today, xmas));
 //=> true (yaaay)
 ```
 
+
 ### raider.getMinutes(dateA, dateB)
 Get the minutes between two dates.
 ```javascript
@@ -60,6 +60,7 @@ const otherDate = new Date(2016, 3, 22, 7, 10);
 console.log(raider.getMinutes(oneDate, otherDate));
 //=> 1337
 ```
+
 
 ### raider.getWeekday(date)
 Get the weekday of a date. Sunday = 0
@@ -73,6 +74,7 @@ console.log(date.getDay());
 //=> 4
 ```
 
+
 ### Spans
 ```javascript
 const date1 = new Date(2016, 0, 4, 9, 0);
@@ -80,6 +82,7 @@ const date2 = new Date(2016, 0, 4, 17, 0);
 
 const span = new raider.Span(date1, date2);
 ```
+
 
 #### .contains(date)
 Does the span contain the date?
@@ -94,6 +97,7 @@ console.log(span.contains(borderDate));
 //=> true
 ```
 
+
 #### .inside(date)
 Is the date inside the span?
 ```javascript
@@ -106,6 +110,7 @@ console.log(span.contains(date));
 console.log(span.contains(borderDate));
 //=> false
 ```
+
 
 #### .overlaps(span)
 Does the span overlap the other?
@@ -124,6 +129,7 @@ console.log(span1.overlaps(span2));
 //=> true
 ```
 
+
 #### .intersection(span)
 Returns a new Span where both spans intersect
 ```javascript
@@ -134,6 +140,7 @@ const intersection = span1.intersection(span2);
 	)
 */
 ```
+
 
 #### .xor(span)
 Returns an array of spans where the intersections have been cut out
@@ -151,12 +158,14 @@ const xorred = span1.xor(span2);
 	]
 ```
 
+
 #### .getMinutes()
 Returns the minutes between the dates in the span
 ```javascript
 console.log(span2.getMinutes());
 //=> 75
 ```
+
 
 #### .length()
 Returns the milliseconds between the dates in the span
