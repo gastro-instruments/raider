@@ -5,7 +5,8 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "xo && ava",
-		"bench": "matcha bench.js span/bench.js"
+		"bench": "matcha bench.js span/bench.js",
+		"ci": "ava --tap | tap-mocha-reporter xunit"
 	},
 	"repository": {
 		"type": "git",
@@ -17,13 +18,19 @@
 		"ava": "^0.14.0",
 		"matcha": "^0.7.0",
 		"moment": "^2.12.0",
+		"tap-mocha-reporter": "^3.0.6",
 		"twix": "^0.9.0",
 		"xo": "^0.14.0"
 	},
 	"ava": {
-		"files": ["index.spec.js", "span/**/*.spec.js"]
+		"files": [
+			"index.spec.js",
+			"span/**/*.spec.js"
+		]
 	},
 	"xo": {
-		"ignores": ["**/bench.js"]
+		"ignores": [
+			"**/bench.js"
+		]
 	}
 }
