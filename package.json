@@ -10,10 +10,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "ssh://git@stash.instruments.local:7999/cc/raider.git"
+		"url": "https://github.com/gastro-instruments/raider.git"
 	},
-	"author": "Benjamin Hendrich <bh@gastro-instruments.de>",
-	"license": "ISC",
+	"author": "Gastro Instruments GmbH <dev@gastro-instruments.de>",
+	"license": "MIT",
 	"devDependencies": {
 		"ava": "^0.14.0",
 		"matcha": "^0.7.0",
