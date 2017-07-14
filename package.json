@@ -1,7 +1,7 @@
 {
 	"name": "@gi/raider",
 	"version": "0.0.2",
-	"description": "A faster twix",
+	"description": "High performance time and date query functions for JavaScript",
 	"main": "index.js",
 	"scripts": {
 		"lint": "xo",
@@ -25,6 +25,7 @@
 		"twix": "^0.9.0",
 		"xo": "^0.14.0"
 	},
+	"keywords": ["date", "time", "high-performance"],
 	"ava": {
 		"files": ["index.spec.js", "span/**/*.spec.js"]
 	},
