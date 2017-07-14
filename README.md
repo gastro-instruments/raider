@@ -1,7 +1,7 @@
 # Raider
 ##### *Sometimes a new recipe just isn't better*
 
-[![](https://img.shields.io/badge/unicorn-approved-ff69b4.svg)](https://www.youtube.com/watch?v=9auOCbH5Ns4) [![Build Status](https://travis-ci.org/gastro-instruments/raider.svg?branch=master)](https://travis-ci.org/gastro-instruments/raider)
+[![Build Status](https://travis-ci.org/gastro-instruments/raider.svg?branch=master)](https://travis-ci.org/gastro-instruments/raider) [![Coverage Status](https://coveralls.io/repos/github/gastro-instruments/raider/badge.svg?branch=master)](https://coveralls.io/github/gastro-instruments/raider?branch=master)
 
 ## Why
 
