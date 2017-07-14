@@ -6,7 +6,7 @@
 	"scripts": {
 		"test": "xo && ava",
 		"bench": "matcha bench.js span/bench.js",
-		"ci": "ava --tap | tap-junit -o build/test-reports/ -n report"
+		"report": "nyc report --reporter=text-lcov | coveralls"
 	},
 	"repository": {
 		"type": "git",
@@ -16,23 +16,18 @@
 	"license": "MIT",
 	"devDependencies": {
 		"ava": "^0.14.0",
+		"coveralls": "^2.13.1",
 		"matcha": "^0.7.0",
 		"moment": "^2.12.0",
-		"tap-junit": "^1.2.0",
-		"tap-mocha-reporter": "^3.0.6",
-		"tap-xunit": "^1.7.0",
+		"nyc": "^11.0.3",
 		"twix": "^0.9.0",
 		"xo": "^0.14.0"
 	},
 	"ava": {
-		"files": [
-			"index.spec.js",
-			"span/**/*.spec.js"
-		]
+		"files": ["index.spec.js", "span/**/*.spec.js"]
 	},
 	"xo": {
-		"ignores": [
-			"**/bench.js"
-		]
-	}
+		"ignores": ["**/bench.js"]
+	},
+	"dependencies": {}
 }
