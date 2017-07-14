@@ -14,7 +14,7 @@
 
 ## Install
 ```bash
-$ npm install --save raider
+$ npm install --save @gi/raider
 ```
 
 
