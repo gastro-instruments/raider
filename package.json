@@ -1,6 +1,6 @@
 {
 	"name": "@gi/raider",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "A faster twix",
 	"main": "index.js",
 	"scripts": {
