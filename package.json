@@ -1,38 +1,36 @@
 {
 	"name": "@gi/raider",
-	"version": "0.0.1",
-	"description": "A faster twix",
+	"version": "0.0.2",
+	"description": "High performance time and date query functions for JavaScript",
 	"main": "index.js",
 	"scripts": {
-		"test": "xo && ava",
+		"lint": "xo",
+		"pre-test": "npm run lint",
+		"test": "nyc ava",
 		"bench": "matcha bench.js span/bench.js",
-		"ci": "ava --tap | tap-junit -o build/test-reports/ -n report"
+		"report": "nyc report --reporter=text-lcov | coveralls"
 	},
 	"repository": {
 		"type": "git",
-		"url": "ssh://git@stash.instruments.local:7999/cc/raider.git"
+		"url": "https://github.com/gastro-instruments/raider.git"
 	},
-	"author": "Benjamin Hendrich <bh@gastro-instruments.de>",
-	"license": "ISC",
+	"author": "Gastro Instruments GmbH <dev@gastro-instruments.de>",
+	"license": "MIT",
 	"devDependencies": {
 		"ava": "^0.14.0",
+		"coveralls": "^2.13.1",
 		"matcha": "^0.7.0",
 		"moment": "^2.12.0",
-		"tap-junit": "^1.2.0",
-		"tap-mocha-reporter": "^3.0.6",
-		"tap-xunit": "^1.7.0",
+		"nyc": "^11.0.3",
 		"twix": "^0.9.0",
 		"xo": "^0.14.0"
 	},
+	"keywords": ["date", "time", "high-performance"],
 	"ava": {
-		"files": [
-			"index.spec.js",
-			"span/**/*.spec.js"
-		]
+		"files": ["index.spec.js", "span/**/*.spec.js"]
 	},
 	"xo": {
-		"ignores": [
-			"**/bench.js"
-		]
-	}
+		"ignores": ["**/bench.js"]
+	},
+	"dependencies": {}
 }
