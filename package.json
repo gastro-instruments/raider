@@ -4,7 +4,9 @@
 	"description": "A faster twix",
 	"main": "index.js",
 	"scripts": {
-		"test": "xo && ava",
+		"lint": "xo",
+		"pre-test": "npm run lint",
+		"test": "nyc ava",
 		"bench": "matcha bench.js span/bench.js",
 		"report": "nyc report --reporter=text-lcov | coveralls"
 	},
