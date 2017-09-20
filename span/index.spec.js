@@ -215,8 +215,8 @@ test('xor - compare the times correctly with small numbers', t => {
 });
 
 test('xor - compare the times correctly with negative numbers', t => {
-	const span1 = new Span(-20, new Date(-5));
-	const span2 = new Span(-10, new Date(20));
+	const span1 = new Span(new Date(-20), new Date(-5));
+	const span2 = new Span(new Date(-10), new Date(20));
 	let orred;
 
 	orred = span1.xor(span2);
