@@ -30,7 +30,7 @@ module.exports = class Span {
 	}
 
 	xor(span) {
-		const dates = this.toArray().concat(span.toArray()).sort();
+		const dates = this.toArray().concat(span.toArray()).sort((a, b) => a - b);
 		const result = [];
 		for (var i = 0; i < dates.length; i += 2) {
 			result.push(new Span(dates[i], dates[i + 1]));

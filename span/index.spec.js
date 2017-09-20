@@ -198,6 +198,38 @@ test('xor - engulfed', t => {
 	t.deepEqual(thatDay('07:30', '08:30'), orred[1]);
 });
 
+test('xor - compare the times correctly with small numbers', t => {
+	const span1 = new Span(new Date(0), new Date(10));
+	const span2 = new Span(new Date(5), new Date(20));
+	let orred;
+
+	orred = span1.xor(span2);
+	t.is(2, orred.length);
+	t.deepEqual(new Span(0, 5), orred[0]);
+	t.deepEqual(new Span(10, 20), orred[1]);
+
+	orred = span2.xor(span1);
+	t.is(2, orred.length);
+	t.deepEqual(new Span(0, 5), orred[0]);
+	t.deepEqual(new Span(10, 20), orred[1]);
+});
+
+test('xor - compare the times correctly with negative numbers', t => {
+	const span1 = new Span(new Date(-20), new Date(-5));
+	const span2 = new Span(new Date(-10), new Date(20));
+	let orred;
+
+	orred = span1.xor(span2);
+	t.is(2, orred.length);
+	t.deepEqual(new Span(-20, -10), orred[0]);
+	t.deepEqual(new Span(-5, 20), orred[1]);
+
+	orred = span2.xor(span1);
+	t.is(2, orred.length);
+	t.deepEqual(new Span(-20, -10), orred[0]);
+	t.deepEqual(new Span(-5, 20), orred[1]);
+});
+
 test('getMinutes', t => {
 	let span = thatDay('06:30', '08:30');
 	t.is(span.getMinutes(), 120);
