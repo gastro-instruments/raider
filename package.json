@@ -1,6 +1,6 @@
 {
 	"name": "@gi/raider",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "High performance time and date query functions for JavaScript",
 	"main": "index.js",
 	"scripts": {
@@ -25,12 +25,21 @@
 		"twix": "^0.9.0",
 		"xo": "^0.14.0"
 	},
-	"keywords": ["date", "time", "high-performance"],
+	"keywords": [
+		"date",
+		"time",
+		"high-performance"
+	],
 	"ava": {
-		"files": ["index.spec.js", "span/**/*.spec.js"]
+		"files": [
+			"index.spec.js",
+			"span/**/*.spec.js"
+		]
 	},
 	"xo": {
-		"ignores": ["**/bench.js"]
+		"ignores": [
+			"**/bench.js"
+		]
 	},
 	"dependencies": {}
 }
